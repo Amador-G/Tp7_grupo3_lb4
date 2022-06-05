@@ -11,9 +11,9 @@ import Entidades.Seguro;
 import dao.Dao_Seguro;
 
 public class Dao_Seguroimplements implements Dao_Seguro {
-	private static final String add = "INSERT INTO personas(Dni, Nombre, Apellido) VALUES(?, ?, ?)";
-	private static final String delete = "DELETE FROM personas WHERE Dni = ?";
-	private static final String modify = "UPDATE personas SET Nombre = ?, Apellido = ? WHERE DNI = ?";
+	private static final String add = "call sp_Sagregar(?,?,?,?)";
+	private static final String delete = "call sp_Seliminar(?)";
+	private static final String modify = "call sp_Smodificar(?,?,?,?,?)";
 	private static final String list = "SELECT * FROM personas";
 	private static final String getUser = "SELECT Dni FROM personas WHERE Dni = ?";
 	@Override
